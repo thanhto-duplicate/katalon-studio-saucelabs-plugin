@@ -1,6 +1,6 @@
 # katalon-studio-saucelabs-plugin
 
-Katalon Studio SauceLabs Plugin is a Custom Keyword Plugin that provides integration with SauceLabs.
+Katalon Studio SauceLabs Plugin is a Custom Keyword Plugin that provides integration with SauceLabs. Compatible with Katalon Studio from 6.2.0 onward.
 
 ## Katalon Studio Report Plugin provides:
 - Automatically generate Custom Capabilities that allow remote driver to connect to SauceLabs.
