@@ -2,11 +2,11 @@
 
 Katalon Studio SauceLabs Plugin is a Custom Keyword Plugin that provides integration with SauceLabs.
 
-**Katalon Studio Report Plugin provides:**
+## Katalon Studio Report Plugin provides:
 - Automatically generate Custom Capabilities that allow remote driver to connect to SauceLabs.
 - Automatically update SauceLabs' job information by test case's name and status.
 
-**Limitation:**
+## Limitation:
 - Katalon Studio SauceLabs Plugin is for Test Case only, not Test Suite or Test Suite Collection.
 
 ## Build project
