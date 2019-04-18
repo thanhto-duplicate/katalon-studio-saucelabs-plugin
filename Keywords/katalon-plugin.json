@@ -1,0 +1,55 @@
+{
+   "name": "Katalon Saucelabs Integration",
+   "listeners": ["SauceLabsTestListener"],
+   "configuration": {
+      "settingId": "com.kms.katalon.keyword.Saucelabs-keywords",
+      "settingPage": {
+         "name": "Saucelabs Integration",
+         "components": [
+            {
+               "key": "accessKey",
+               "type": "secret",
+               "label": "API Key",
+               "defaultValue": ""
+            },
+            {
+               "key": "username",
+               "type": "text",
+               "label": "Username",
+               "defaultValue": ""
+            },
+            {
+               "key": "browserName",
+               "type": "text",
+               "label": "Browser's name",
+               "defaultValue": "Safari"
+            },
+            {
+               "key": "platform",
+               "type": "text",
+               "label": "Platform",
+               "defaultValue": "macOS 10.13"
+            },
+            {
+               "key": "version",
+               "type": "text",
+               "label": "Version",
+               "defaultValue": "11.1"
+            },
+            {
+               "key": "name",
+               "type": "text",
+               "label": "Job's name",
+               "defaultValue": "Default Job"
+            },
+            {
+               "key": "SauceLabs Desired Capabilities Generator",
+               "type": "generator",
+               "label": "Generate Saucelabs desired capabilities",
+	            "implementationClassPath": "com.kms.katalon.keyword.saucelabs.SauceLabsEventHandler",
+               "defaultValue": ""
+            }
+         ]
+      }
+   }
+}
