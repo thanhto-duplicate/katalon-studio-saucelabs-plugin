@@ -10,7 +10,8 @@ import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.keyword.CustomProfile
 import com.kms.katalon.core.keyword.IActionProvider
-import com.kms.katalon.core.keyword.IPluginEventHandler
+import com.kms.katalon.core.keyword.IContext
+import com.kms.katalon.core.keyword.IControlSelectionEventHandler
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.setting.BundleSettingStore
@@ -23,18 +24,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public class SauceLabsEventHandler implements IPluginEventHandler {
+public class SauceLabsButtonSelectionEventHandler implements IControlSelectionEventHandler {
 
-	void handle(IActionProvider actionProvider, BundleSettingStore store) {
+	void handle(IActionProvider actionProvider, Map<String, Object> dataFields, IContext context) {
 		CustomProfile profile = new CustomProfile();
-
 		def customCapabilities = [:];
-		customCapabilities['username'] = store.getString("username", "");
-		customCapabilities['accessKey'] = store.getString("accessKey", "");
-		customCapabilities['browserName'] = store.getString("browserName", "");
-		customCapabilities['platform'] = store.getString("platform", "");
-		customCapabilities['version'] = store.getString("version", "");
-		customCapabilities['name'] = store.getString("name", "");
+		customCapabilities['username'] = dataFields.getOrDefault("username", "");
+		customCapabilities['accessKey'] = dataFields.getOrDefault("accessKey", "");
+		customCapabilities['browserName'] = dataFields.getOrDefault("browserName", "");
+		customCapabilities['platform'] = dataFields.getOrDefault("platform", "");
+		customCapabilities['version'] = dataFields.getOrDefault("version", "");
+		customCapabilities['name'] = dataFields.getOrDefault("name", "");
 		customCapabilities['remoteWebDriverType'] = 'Selenium';
 		customCapabilities['remoteWebDriverUrl'] = 'http://ondemand.saucelabs.com:80/wd/hub';
 
