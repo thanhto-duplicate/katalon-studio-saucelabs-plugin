@@ -38,7 +38,7 @@ public class SauceLabsButtonSelectionEventHandler implements IControlSelectionEv
 		customCapabilities['remoteWebDriverType'] = 'Selenium';
 		customCapabilities['remoteWebDriverUrl'] = 'http://ondemand.saucelabs.com:80/wd/hub';
 
-		profile.setName("Sauce Labs");
+		profile.setName(SauceLabsUtils.SAUCE_LABS_RUN_CONFIG_NAME);
 		profile.setDriverType("Remote");
 		profile.setDesiredCapabilities(customCapabilities);
 

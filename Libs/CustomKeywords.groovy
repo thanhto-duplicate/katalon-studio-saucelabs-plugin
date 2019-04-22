@@ -16,12 +16,12 @@ def static "com.kms.katalon.keyword.saucelabs.SauceLabsKeywords.updateJob"(
          , 	argsMap)
 }
 
+def static "com.kms.katalon.keyword.saucelabs.SauceLabsKeywords.getLatestJobId"() {
+    (new com.kms.katalon.keyword.saucelabs.SauceLabsKeywords()).getLatestJobId()
+}
+
 def static "com.kms.katalon.keyword.saucelabs.SauceLabsKeywords.getAllJobs"(
     	boolean full	) {
     (new com.kms.katalon.keyword.saucelabs.SauceLabsKeywords()).getAllJobs(
         	full)
-}
-
-def static "com.kms.katalon.keyword.saucelabs.SauceLabsKeywords.getLatestJobId"() {
-    (new com.kms.katalon.keyword.saucelabs.SauceLabsKeywords()).getLatestJobId()
 }

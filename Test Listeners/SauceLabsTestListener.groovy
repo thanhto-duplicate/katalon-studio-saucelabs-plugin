@@ -33,18 +33,20 @@ public class SauceLabsTestListener {
 
 	@BeforeTestCase
 	def enableSauceLabs(TestCaseContext testCaseContext) {
-		KeywordUtil.logInfo("[SAUCELABS] Saucelabs integration is enabled !")
-		BundleSettingStore store = new BundleSettingStore(RunConfiguration.getProjectDir()
-				, "com.kms.katalon.keyword.Saucelabs-keywords", true)
-		store.setProperty("sauceLabsEnabled", true)
+		String runConfigName = (String) RunConfiguration.getProperty("Name")
+		KeywordUtil.logInfo("[SAUCELABS] Current run configuration: " + runConfigName)
+		if(runConfigName.equals(SauceLabsUtils.SAUCE_LABS_RUN_CONFIG_NAME)){ 
+			KeywordUtil.logInfo("[SAUCELABS] Saucelabs Plugin will auto update job status and information !")
+		} else {
+			KeywordUtil.logInfo("[SAUCELABS] Saucelabs Plugin will not auto update job status and information !");
+		}
 	}
 
 	@AfterTestCase
 	def autoUpdateJobStatus(TestCaseContext testCaseContext) {
-		BundleSettingStore store = new BundleSettingStore(RunConfiguration.getProjectDir()
-				, "com.kms.katalon.keyword.Saucelabs-keywords", true)
-		boolean sauceLabsEnabled = store.getBoolean("sauceLabsEnabled", false)
-		if(sauceLabsEnabled) {
+		String runConfigName = (String) RunConfiguration.getProperty("Name");
+		KeywordUtil.logInfo("[SAUCELABS] Current run configuration: " + runConfigName)
+		if(runConfigName.equals(SauceLabsUtils.SAUCE_LABS_RUN_CONFIG_NAME)){
 			KeywordUtil.logInfo("[SAUCELABS] Auto updating job status and information ...")
 			String latestJobId = SauceLabsUtils.getLatestJobId()
 			String status = testCaseContext.getTestCaseStatus()
