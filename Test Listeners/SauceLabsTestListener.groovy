@@ -36,9 +36,9 @@ public class SauceLabsTestListener {
 		String runConfigName = (String) RunConfiguration.getProperty("Name")
 		KeywordUtil.logInfo("[SAUCELABS] Current run configuration: " + runConfigName)
 		if(runConfigName.equals(SauceLabsUtils.SAUCE_LABS_RUN_CONFIG_NAME)){ 
-			KeywordUtil.logInfo("[SAUCELABS] Saucelabs Plugin will auto update job status and information !")
+			KeywordUtil.logInfo("[SAUCELABS] Sauce Labs Plugin will auto update job status and information !")
 		} else {
-			KeywordUtil.logInfo("[SAUCELABS] Saucelabs Plugin will not auto update job status and information !");
+			KeywordUtil.logInfo("[SAUCELABS] Sauce Labs Plugin will not auto update job status and information !");
 		}
 	}
 
